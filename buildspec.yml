@@ -6,4 +6,19 @@ phases:
       - echo Executing install phases
     finally:
       - Executing Install finally
-      
+  pre_build:
+    commands:
+      - echo Executing install phases
+    finally:
+      - Executing Install finally
+  build:
+    commands:
+      - echo Executing install phases
+    finally:
+      - Executing Install finally
+  post_build:
+    commands:
+      - echo Executing install phases
+    finally:
+      - Executing Install finally
+  
