@@ -5,20 +5,20 @@ phases:
     commands:
       - echo Executing install phases
     finally:
-      - Executing Install finally
+      - echo Executing Install finally
   pre_build:
     commands:
       - echo Executing install phases
     finally:
-      - Executing Install finally
+      - echo Executing Install finally
   build:
     commands:
       - echo Executing install phases
     finally:
-      - Executing Install finally
+      - echo Executing Install finally
   post_build:
     commands:
       - echo Executing install phases
     finally:
-      - Executing Install finally
+      - echo Executing Install finally
   
