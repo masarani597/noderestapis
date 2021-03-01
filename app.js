@@ -6,7 +6,13 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     res.json({message :'Hello World'})
+});
+
+app.get('/users', (req, res) => {
+    res.json({message :'Hello World: This is user route'})
 })
+
+
 
 let server = app.listen(port, ()=> {
     console.log(`Example app listening at ${port}`)
