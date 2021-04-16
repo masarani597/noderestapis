@@ -2,9 +2,7 @@ pipeline
 {
     agent
     {
-        { 
-            label 'minikube' 
-        }
+        label 'minikube' 
     }
    
     environment
