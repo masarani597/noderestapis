@@ -7,11 +7,9 @@ pipeline
    
     environment
     {
-    	
     	dockerhubcredentials = 'mydockerhub'
         dockerImage = ''
         registry = 'masarani/nodeimage1'
-   
 	}
 
     stages
@@ -35,6 +33,21 @@ pipeline
                 }
             }
         }
+
+        stage("Upload Image")
+        {
+            steps
+            {
+                script
+                {
+                    docker.withRegistry('', dockerhubcredentials)
+                    {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
 
 
 
