@@ -5,7 +5,9 @@ pipeline
     environment
     {
     	
-    	DOCKERHUBCREDENTIALS = 'mydockerhub'
+    	dockerhubcredentials = 'mydockerhub'
+        dockerImage = ''
+        registry = 'masarani/nodeimage1'
    
 	}
 
@@ -17,8 +19,21 @@ pipeline
             {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/masarani597/noderestapis.git']]])
             }
-
         }
+
+
+        stage("Build docker Image")
+        {
+            steps
+            {
+                script
+                {
+                    dockerImage = docker.build registry
+                }
+            }
+        }
+
+
 
     }
   
