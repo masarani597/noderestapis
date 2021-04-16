@@ -49,15 +49,7 @@ pipeline
         }
 
 
-        stage("Stop the container")
-        {
-            steps
-            {
-                sh 'docker stop nodeImage1container'
-                sh 'docker rm nodeImage1container'
-
-            }
-        }
+      
 
 
         stage("Start the container")
