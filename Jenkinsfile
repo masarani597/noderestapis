@@ -49,6 +49,36 @@ pipeline
         }
 
 
+        stage("Stop the container")
+        {
+            steps
+            {
+                sh 'docker stop nodeImage1container'
+                sh 'docker rm nodeImage1container'
+
+            }
+        }
+
+
+        stage("Start the container")
+        {
+            steps
+            {
+                script
+                {
+                    dockerImage.run("-p 3006:3000 --rm --name nodeImage1container")
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
 
 
     }
